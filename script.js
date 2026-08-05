@@ -4,15 +4,37 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Sinaliza que o JavaScript está ativo para as regras de estilo do CSS
+  document.body.classList.add('js-active');
+
   /* =========================================
-     1. NAVBAR DYNAMICS & SCROLL BLUR
+     1. NAVBAR DYNAMICS, SCROLL BLUR & PROGRESS BAR
      ========================================= */
   const navbar = document.getElementById('navbar');
+  const progressBar = document.getElementById('scrollProgress');
+  let ticked = false;
+
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+    if (!ticked) {
+      window.requestAnimationFrame(() => {
+        // Efeito da Barra de Navegação Rolar
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+
+        // Atualização da Barra de Progresso de Rolagem
+        if (progressBar) {
+          const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const scrolledPercent = height > 0 ? (winScroll / height) * 100 : 0;
+          progressBar.style.width = scrolledPercent + '%';
+        }
+
+        ticked = false;
+      });
+      ticked = true;
     }
   });
 
@@ -41,32 +63,25 @@ document.addEventListener('DOMContentLoaded', () => {
      3. INTERSECTION OBSERVER — SCROLL REVEALS
      ========================================= */
   const revealElements = document.querySelectorAll(
-    '.pillar-card, .book-card, .step-item, .meridian-point, .banner-card, .about-card-profile, .stat-box'
+    '.pillar-card, .book-card, .step-item, .meridian-point, .banner-card, .about-card-profile, .stat-box, .section-header, .solution-card'
   );
 
   const revealOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.10,
+    rootMargin: '0px 0px -40px 0px'
   };
 
   const revealOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry, index) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Adiciona um pequeno atraso escalonado com base na posição
-        setTimeout(() => {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0) scale(1)';
-        }, (index % 4) * 100);
-
+        entry.target.classList.add('revealed');
         observer.unobserve(entry.target);
       }
     });
   }, revealOptions);
 
   revealElements.forEach((el) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px) scale(0.98)';
-    el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+    el.classList.add('reveal-on-scroll');
     revealOnScroll.observe(el);
   });
 
