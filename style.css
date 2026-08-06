@@ -233,6 +233,10 @@ h1, h2, h3, h4, .serif-font {
   width: 100%;
 }
 
+.mobile-cta-item {
+  display: none !important;
+}
+
 /* CTA Buttons */
 .btn {
   display: inline-flex;
@@ -2237,6 +2241,31 @@ h1, h2, h3, h4, .serif-font {
 
   .mobile-toggle {
     display: block;
+  }
+
+  .nav-cta {
+    display: none !important;
+  }
+
+  .mobile-cta-item {
+    display: block !important;
+    margin-top: 1.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .mobile-cta-item a {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.8rem 1.5rem !important;
+    background: var(--gold-accent) !important;
+    color: var(--bg-dark) !important;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: var(--shadow-gold);
   }
 
   .pillars-grid,

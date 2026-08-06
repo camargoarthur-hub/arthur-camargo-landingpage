@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   const revealOptions = {
-    threshold: 0.10,
-    rootMargin: '0px 0px -40px 0px'
+    threshold: 0.01,
+    rootMargin: '0px 0px -10px 0px'
   };
 
   const revealOnScroll = new IntersectionObserver((entries, observer) => {
