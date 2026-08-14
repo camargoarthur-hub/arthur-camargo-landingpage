@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
      3. INTERSECTION OBSERVER — SCROLL REVEALS
      ========================================= */
   const revealElements = document.querySelectorAll(
-    '.pillar-card, .book-card, .step-item, .meridian-point, .banner-card, .about-card-profile, .stat-box, .section-header, .solution-card, .protocol-showcase-banner, .insight-card'
+    '.pillar-card, .book-card, .step-item, .meridian-point, .banner-card, .about-card-profile, .stat-box, .section-header, .solution-card, .protocol-showcase-banner, .insight-card, .client-card'
   );
 
   const revealOptions = {
