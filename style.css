@@ -451,11 +451,45 @@ h1, h2, h3, h4, .serif-font {
   color: var(--text-light);
 }
 
+.hero-trust-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2.2rem;
+}
+
+.trust-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.95rem;
+  background: rgba(15, 51, 54, 0.7);
+  border: 1px solid rgba(200, 168, 107, 0.35);
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
 .hero-actions {
   display: flex;
   gap: 1.2rem;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.btn-large {
+  padding: 1rem 1.8rem;
+  font-size: 1rem;
+}
+
+.hero-cta-microcopy {
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 /* =========================================
