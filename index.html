@@ -238,7 +238,15 @@
         </div>
 
         <div class="banner-image-container">
-          <img src="assets/flyer_complete.jpg" alt="Arthur Camargo - Abordagem Integrativa e Regulação Neurobiológica" onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=80'">
+          <div class="slide-controls-bar">
+            <span class="slide-badge"><i class="ph-bold ph-slideshow"></i> Apresentação Oficial (3 Lâminas)</span>
+            <div class="slide-dots">
+              <button class="slide-dot active" onclick="switchSlide(1, this)" aria-label="Slide 1">1</button>
+              <button class="slide-dot" onclick="switchSlide(2, this)" aria-label="Slide 2">2</button>
+              <button class="slide-dot" onclick="switchSlide(3, this)" aria-label="Slide 3">3</button>
+            </div>
+          </div>
+          <img id="presentationSlideImg" src="assets/presentation_slide_1.webp" alt="Arthur Camargo - Apresentação de Ciência e Sabedoria Somática" onerror="this.src='assets/presentation_slide_1.jpg'">
         </div>
       </div>
     </div>

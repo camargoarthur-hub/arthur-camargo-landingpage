@@ -201,3 +201,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+/* =========================================
+   GLOBAL SLIDE SWITCHER (PRESENTATION 1)
+   ========================================= */
+function switchSlide(slideNum, btn) {
+  const img = document.getElementById('presentationSlideImg');
+  if (img) {
+    img.style.opacity = '0.3';
+    setTimeout(() => {
+      img.src = `assets/presentation_slide_${slideNum}.webp`;
+      img.onerror = function() { this.src = `assets/presentation_slide_${slideNum}.jpg`; };
+      img.style.opacity = '1';
+    }, 120);
+  }
+  document.querySelectorAll('.slide-dot').forEach(dot => dot.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+}

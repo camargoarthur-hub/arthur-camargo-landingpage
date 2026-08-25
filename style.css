@@ -864,6 +864,54 @@ h1, h2, h3, h4, .serif-font {
   display: block;
 }
 
+.slide-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1.2rem;
+  background: rgba(9, 32, 34, 0.92);
+  border-bottom: 1px solid var(--glass-dark-border);
+}
+
+.slide-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gold-bright);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.slide-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.slide-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid var(--gold-accent);
+  color: var(--text-light);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.slide-dot:hover,
+.slide-dot.active {
+  background: var(--gold-bright);
+  color: var(--primary-dark);
+  border-color: var(--gold-bright);
+}
+
 /* =========================================
    OS 5 PILARES DA TRANSFORMAÇÃO (FLYER)
    ========================================= */
