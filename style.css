@@ -2752,3 +2752,174 @@ body.js-active .reveal-on-scroll.revealed {
     justify-content: flex-start;
   }
 }
+
+/* =========================================
+   PALESTRAS VOLUNTÁRIAS PARA ESCOLAS
+   ========================================= */
+.school-lectures-section {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, rgba(9, 32, 34, 0.95) 0%, rgba(15, 51, 54, 0.9) 100%);
+  border-bottom: 1px solid var(--glass-dark-border);
+}
+
+.school-lectures-box {
+  background: rgba(15, 51, 54, 0.65);
+  border: 1px solid var(--gold-accent);
+  border-radius: 24px;
+  padding: 3.5rem 3rem;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  backdrop-filter: blur(12px);
+}
+
+.school-header {
+  margin-bottom: 3rem;
+}
+
+.school-header h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.school-header p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 900px;
+  line-height: 1.7;
+}
+
+.school-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.school-badge-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.school-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.school-feature-item {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  background: rgba(9, 32, 34, 0.6);
+  border: 1px solid var(--glass-dark-border);
+  padding: 1.2rem 1.5rem;
+  border-radius: 16px;
+  transition: var(--transition-smooth);
+}
+
+.school-feature-item:hover {
+  border-color: var(--gold-accent);
+  transform: translateX(4px);
+}
+
+.school-feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(200, 168, 107, 0.15);
+  border: 1px solid var(--gold-accent);
+  color: var(--gold-bright);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.school-feature-item h4 {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.school-feature-item p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.school-folder-viewer {
+  background: rgba(9, 32, 34, 0.95);
+  border: 2px solid var(--gold-accent);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+}
+
+.folder-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1.4rem;
+  background: rgba(15, 51, 54, 0.9);
+  border-bottom: 1px solid var(--glass-dark-border);
+}
+
+.folder-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold-bright);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.folder-toggle-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.folder-btn {
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--gold-accent);
+  color: var(--text-light);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.folder-btn:hover,
+.folder-btn.active {
+  background: var(--gold-bright);
+  color: var(--primary-dark);
+  border-color: var(--gold-bright);
+}
+
+.folder-image-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.25s ease;
+}
+
+@media (max-width: 992px) {
+  .school-lectures-box {
+    padding: 2.2rem 1.5rem;
+  }
+  .school-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

@@ -218,3 +218,20 @@ function switchSlide(slideNum, btn) {
   document.querySelectorAll('.slide-dot').forEach(dot => dot.classList.remove('active'));
   if (btn) btn.classList.add('active');
 }
+
+/* =========================================
+   GLOBAL SCHOOL FLYER SWITCHER (FRENTE / VERSO)
+   ========================================= */
+function switchSchoolFlyer(side, btn) {
+  const img = document.getElementById('schoolFlyerImg');
+  if (img) {
+    img.style.opacity = '0.3';
+    setTimeout(() => {
+      img.src = `assets/flayer_escolas_${side}.webp`;
+      img.onerror = function() { this.src = `assets/flayer_escolas_${side}.jpg`; };
+      img.style.opacity = '1';
+    }, 120);
+  }
+  document.querySelectorAll('.folder-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+}
