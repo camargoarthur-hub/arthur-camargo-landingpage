@@ -9,10 +9,6 @@
   <!-- Ícones do Phosphor Icons para sofisticação visual -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7380806581382195"
-     crossorigin="anonymous"></script>
-
   <!-- JSON-LD Dados Estruturados (Local SEO & ProfessionalService) -->
   <script type="application/ld+json">
   {
@@ -1082,19 +1078,41 @@
     </div>
   </footer>
 
+  <!-- Banner de Consentimento de Cookies LGPD -->
+  <div id="cookieBanner" class="cookie-banner" style="display: none;">
+    <div class="cookie-banner-content">
+      <div class="cookie-text">
+        <p>
+          <i class="ph-bold ph-shield-check text-gold"></i>
+          <strong>Privacidade & Consentimento (LGPD):</strong> Utilizamos cookies essenciais e ferramentas de medição/anúncios (Google AdSense) para personalizar sua experiência. Você pode aceitar todos os cookies ou manter apenas os estritamente essenciais.
+        </p>
+      </div>
+      <div class="cookie-actions">
+        <button id="acceptCookies" class="btn btn-gold btn-sm">Aceitar Todos</button>
+        <button id="rejectCookies" class="btn btn-outline-gold btn-sm">Rejeitar Não Essenciais</button>
+        <a href="javascript:void(0)" onclick="document.getElementById('privacyModal').showModal()" class="cookie-link">Política de Privacidade</a>
+      </div>
+    </div>
+  </div>
+
   <!-- Modais de Conformidade YMYL & SEO (Nativos via tag <dialog>) -->
   <dialog id="privacyModal" class="seo-modal">
     <div class="modal-content">
       <div class="modal-header">
-        <h3>Política de Privacidade</h3>
+        <h3>Política de Privacidade (LGPD & YMYL)</h3>
         <button onclick="document.getElementById('privacyModal').close()" class="modal-close">&times;</button>
       </div>
       <div class="modal-body">
-        <p>Esta política de privacidade define como este site utiliza e protege as informações fornecidas por você durante a navegação.</p>
-        <p><strong>Coleta de Dados:</strong> Coletamos apenas informações fornecidas voluntariamente ao entrar em contato via WhatsApp ou e-mail (como nome e telefone).</p>
-        <p><strong>Uso das Informações:</strong> As informações são utilizadas estritamente para agendamento de consultas e esclarecimento de dúvidas. Seus dados nunca serão compartilhados, vendidos ou distribuídos a terceiros.</p>
-        <p><strong>Segurança:</strong> Adotamos procedimentos físicos e eletrônicos adequados para garantir a segurança das informações coletadas online, em conformidade com a LGPD (Lei Geral de Proteção de Dados).</p>
-        <p><strong>Contato:</strong> Em caso de dúvidas sobre nossa política, entre em contato pelo e-mail <a href="mailto:camargo.arthur@gmail.com">camargo.arthur@gmail.com</a>.</p>
+        <p>Esta política de privacidade descreve o tratamento de dados pessoais realizado por Arthur Camargo (CRTH-BR 17948), em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD).</p>
+        <p><strong>1. Finalidade do Tratamento:</strong></p>
+        <ul style="padding-left: 1.2rem; margin-bottom: 1rem; color: var(--text-muted);">
+          <li style="margin-bottom: 0.5rem;"><strong>Atendimento Clínico Individual:</strong> Coleta mínima de nome e WhatsApp/E-mail fornecidos voluntariamente pelo usuário para agendamentos e triagem terapêutica. Os dados de saúde são classificados como dados sensíveis (Art. 5º, II da LGPD) e tratados com sigilo profissional absoluto.</li>
+          <li><strong>Programas Corporativos B2B (NR-1):</strong> Gestão de dados de representantes de empresas para emissão de propostas comerciais técnicas, contratos e notas fiscais.</li>
+        </ul>
+        <p><strong>2. Tecnologias de Terceiros & Parceiros:</strong></p>
+        <p>O site é hospedado na infraestrutura segura da <strong>Vercel Inc.</strong> Coletamos cookies de navegação e medição através do serviço <strong>Google AdSense / Alphabet Inc.</strong> apenas mediante consentimento prévio do usuário pelo banner de cookies.</p>
+        <p><strong>3. Direitos do Titular & Canal do Encarregado (DPO):</strong></p>
+        <p>Nos termos do Art. 18 da LGPD, você pode solicitar a confirmação, acesso, correção, anonimização ou exclusão definitiva dos seus dados a qualquer momento enviando uma solicitação ao Encarregado de Proteção de Dados (DPO) através do e-mail oficial: <a href="mailto:camargo.arthur@gmail.com">camargo.arthur@gmail.com</a> ou pelo WhatsApp corporativo <strong>(21) 98386-0526</strong>.</p>
       </div>
     </div>
   </dialog>

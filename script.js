@@ -161,4 +161,43 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  /* =========================================
+     6. LGPD COOKIE CONSENT & ADSENSE DYNAMIC LOADING
+     ========================================= */
+  const cookieBanner = document.getElementById('cookieBanner');
+  const acceptCookiesBtn = document.getElementById('acceptCookies');
+  const rejectCookiesBtn = document.getElementById('rejectCookies');
+
+  function loadGoogleAdSense() {
+    if (document.getElementById('adsenseScript')) return;
+    const script = document.createElement('script');
+    script.id = 'adsenseScript';
+    script.async = true;
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7380806581382195';
+    script.crossOrigin = 'anonymous';
+    document.head.appendChild(script);
+  }
+
+  const consent = localStorage.getItem('cookieConsent');
+  if (!consent) {
+    if (cookieBanner) cookieBanner.style.display = 'block';
+  } else if (consent === 'accepted') {
+    loadGoogleAdSense();
+  }
+
+  if (acceptCookiesBtn) {
+    acceptCookiesBtn.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'accepted');
+      if (cookieBanner) cookieBanner.style.display = 'none';
+      loadGoogleAdSense();
+    });
+  }
+
+  if (rejectCookiesBtn) {
+    rejectCookiesBtn.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'rejected');
+      if (cookieBanner) cookieBanner.style.display = 'none';
+    });
+  }
 });
