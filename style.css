@@ -198,7 +198,7 @@ h1, h2, h3, h4, .serif-font {
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.1rem;
   list-style: none;
   align-items: center;
 }
@@ -206,9 +206,9 @@ h1, h2, h3, h4, .serif-font {
 .nav-links a {
   color: var(--text-light);
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   position: relative;
   transition: var(--transition-fast);
   white-space: nowrap;
@@ -231,6 +231,18 @@ h1, h2, h3, h4, .serif-font {
 
 .nav-links a:hover::after {
   width: 100%;
+}
+
+.nav-cta {
+  margin-left: 0.8rem;
+  flex-shrink: 0;
+}
+
+.nav-cta .btn {
+  padding: 0.55rem 1.15rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .mobile-cta-item {
@@ -307,8 +319,37 @@ h1, h2, h3, h4, .serif-font {
 }
 
 /* =========================================
-   TOP FLYER BAR (DESTAQUE OFICIAL GIGANTE)
+   TOP FLYER BAR & ENTRANCE ANIMATION
    ========================================= */
+@keyframes flyerEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-35px) scale(0.94);
+    filter: blur(8px);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(4px) scale(1.008);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes badgeEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .top-flyer-bar {
   padding-top: 6.8rem;
   padding-bottom: 2.5rem;
@@ -338,6 +379,7 @@ h1, h2, h3, h4, .serif-font {
   letter-spacing: 0.15em;
   margin-bottom: 1.5rem;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  animation: badgeEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards;
 }
 
 .top-flyer-img {
@@ -349,7 +391,9 @@ h1, h2, h3, h4, .serif-font {
   box-shadow: 0 25px 65px rgba(0,0,0,0.8);
   display: block;
   margin: 0 auto;
-  transition: var(--transition-smooth);
+  animation: flyerEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.25s backwards;
+  will-change: transform, opacity, filter;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .top-flyer-img:hover {
