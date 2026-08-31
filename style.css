@@ -188,50 +188,51 @@ h1, h2, h3, h4, .serif-font {
 }
 
 .nav-top-row {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   width: 100%;
   min-height: 44px;
+  gap: 1rem;
 }
 
-.brand-logo {
+.nav-top-left {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.brand-logo img {
-  height: 40px;
-  width: auto;
-  transition: var(--transition-bounce);
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
   flex-shrink: 0;
 }
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.nav-top-left img {
+  height: 42px;
+  width: auto;
+  transition: var(--transition-bounce);
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
 }
 
-.brand-name {
+.brand-text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.brand-title-center {
   font-family: 'Cinzel', serif;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--text-light);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   line-height: 1.2;
 }
 
-.brand-subtitle {
-  font-size: 0.68rem;
+.brand-subtitle-center {
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   color: var(--gold-bright);
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 2px;
 }
 
