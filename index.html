@@ -22,6 +22,10 @@
   <!-- Preload da Imagem LCP Principal -->
   <link rel="preload" href="assets/flyer_complete.webp" as="image" type="image/webp" fetchpriority="high">
 
+  <!-- Preload das Fontes de Ícones Utilizadas (Phosphor Bold & Fill) -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/Phosphor-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/Phosphor-Fill.woff2" as="font" type="font/woff2" crossorigin>
+
   <!-- Ícones do Phosphor Icons (Estilos Otimizados Bold & Fill) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css" media="print" onload="this.media='all'">
@@ -1248,6 +1252,6 @@
     </div>
   </dialog>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
