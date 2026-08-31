@@ -1,5 +1,5 @@
 /**
- * script.js — Interatividade & Micro-animações Premium
+ * script.js — Interatividade & Micro-animações Premium (Reflow-Free)
  * Arthur Camargo | Terapeuta Integrativo (CRTH-BR 17948) & Estrategista Somático
  */
 
@@ -8,55 +8,52 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('js-active');
 
   /* =========================================
-     1. NAVBAR DYNAMICS, SCROLL BLUR & PROGRESS BAR
+     1. NAVBAR DYNAMICS, SCROLL BLUR & PROGRESS BAR (ZERO REFLOW)
      ========================================= */
   const navbar = document.getElementById('navbar');
   const progressBar = document.getElementById('scrollProgress');
-  let ticked = false;
 
+  let cachedMaxScroll = 0;
+  function updateScrollLimits() {
+    cachedMaxScroll = (document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight;
+  }
+  updateScrollLimits();
+  window.addEventListener('resize', updateScrollLimits, { passive: true });
+
+  let ticked = false;
   window.addEventListener('scroll', () => {
     if (!ticked) {
       window.requestAnimationFrame(() => {
-        // Efeito da Barra de Navegação Rolar
-        if (window.scrollY > 50) {
+        const currentY = window.scrollY || window.pageYOffset;
+        if (currentY > 50) {
           navbar.classList.add('scrolled');
         } else {
           navbar.classList.remove('scrolled');
         }
 
-        // Atualização da Barra de Progresso de Rolagem
-        if (progressBar) {
-          const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-          const scrolledPercent = height > 0 ? (winScroll / height) * 100 : 0;
+        if (progressBar && cachedMaxScroll > 0) {
+          const scrolledPercent = Math.min(100, Math.max(0, (currentY / cachedMaxScroll) * 100));
           progressBar.style.width = scrolledPercent + '%';
         }
-
         ticked = false;
       });
       ticked = true;
     }
-  });
+  }, { passive: true });
 
   /* =========================================
      2. FAQ ACCORDION INTERACTIVE
      ========================================= */
   const faqItems = document.querySelectorAll('.faq-item');
-
   faqItems.forEach((item) => {
     const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-
-      // Fecha todos os outros antes de abrir o atual para manter elegância limpa
-      faqItems.forEach((otherItem) => {
-        otherItem.classList.remove('active');
+    if (question) {
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        faqItems.forEach((otherItem) => otherItem.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
       });
-
-      if (!isActive) {
-        item.classList.add('active');
-      }
-    });
+    }
   });
 
   /* =========================================
@@ -86,44 +83,23 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* =========================================
-     4. BUTTON RIPPLE & CLICK MICRO-INTERACTION
+     4. BUTTON RIPPLE & CLICK MICRO-INTERACTION (NO FORCED REFLOW)
      ========================================= */
   const buttons = document.querySelectorAll('.btn');
-
   buttons.forEach(btn => {
     btn.addEventListener('click', function(e) {
-      let x = e.clientX - e.target.getBoundingClientRect().left;
-      let y = e.clientY - e.target.getBoundingClientRect().top;
+      const x = e.offsetX !== undefined ? e.offsetX : e.clientX - this.offsetLeft;
+      const y = e.offsetY !== undefined ? e.offsetY : e.clientY - this.offsetTop;
 
-      let ripples = document.createElement('span');
+      const ripples = document.createElement('span');
+      ripples.className = 'btn-ripple';
       ripples.style.left = x + 'px';
       ripples.style.top = y + 'px';
-      ripples.style.position = 'absolute';
-      ripples.style.background = 'rgba(255, 255, 255, 0.4)';
-      ripples.style.width = '100px';
-      ripples.style.height = '100px';
-      ripples.style.borderRadius = '50%';
-      ripples.style.transform = 'translate(-50%, -50%) scale(0)';
-      ripples.style.animation = 'ripple-effect 0.6s linear';
-      ripples.style.pointerEvents = 'none';
-
       this.appendChild(ripples);
 
-      setTimeout(() => {
-        ripples.remove();
-      }, 600);
+      setTimeout(() => ripples.remove(), 600);
     });
   });
-
-  // Estilo dinâmico para a animação do ripple
-  const style = document.createElement('style');
-  style.innerHTML = `
-    @keyframes ripple-effect {
-      0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
-      100% { transform: translate(-50%, -50%) scale(3.5); opacity: 0; }
-    }
-  `;
-  document.head.appendChild(style);
 
   /* =========================================
      5. MOBILE MENU TOGGLE
@@ -133,29 +109,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (mobileToggle && navLinks) {
     mobileToggle.addEventListener('click', () => {
-      const isVisible = navLinks.style.display === 'flex';
-      if (isVisible) {
-        navLinks.style.display = 'none';
-        mobileToggle.innerHTML = '<i class="ph-bold ph-list"></i>';
-      } else {
-        navLinks.style.display = 'flex';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '100%';
-        navLinks.style.left = '0';
-        navLinks.style.width = '100%';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.background = 'rgba(9, 32, 34, 0.98)';
-        navLinks.style.padding = '2rem';
-        navLinks.style.borderBottom = '1px solid var(--glass-dark-border)';
-        mobileToggle.innerHTML = '<i class="ph-bold ph-x"></i>';
-      }
+      const isOpen = navLinks.classList.toggle('nav-open');
+      mobileToggle.innerHTML = isOpen ? '<i class="ph-bold ph-x"></i>' : '<i class="ph-bold ph-list"></i>';
     });
 
-    // Fechar ao clicar num link
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
-          navLinks.style.display = 'none';
+          navLinks.classList.remove('nav-open');
           mobileToggle.innerHTML = '<i class="ph-bold ph-list"></i>';
         }
       });
