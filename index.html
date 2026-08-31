@@ -19,8 +19,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap">
   </noscript>
 
-  <!-- Ícones do Phosphor Icons (Defer para não bloquear renderização) -->
-  <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+  <!-- Preload da Imagem LCP Principal -->
+  <link rel="preload" href="assets/flyer_complete.webp" as="image" type="image/webp" fetchpriority="high">
+
+  <!-- Ícones do Phosphor Icons (Estilos Otimizados Bold & Fill) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+  </noscript>
 
   <!-- Google AdSense Verification Snippet -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7380806581382195"
@@ -157,7 +165,7 @@
       <div class="top-flyer-badge">
         <i class="ph-bold ph-seal-check"></i> Cartão Oficial & Abordagem Clínica
       </div>
-      <img src="assets/flyer_complete.webp" alt="Arthur Camargo — Manifesto e Abordagem Integrativa" class="top-flyer-img" width="980" height="551" onerror="this.src='assets/flyer_complete.jpg'">
+      <img src="assets/flyer_complete.webp" alt="Arthur Camargo — Manifesto e Abordagem Integrativa" class="top-flyer-img" width="980" height="551" fetchpriority="high" loading="eager" onerror="this.src='assets/flyer_complete.jpg'">
     </div>
   </section>
 
@@ -264,7 +272,7 @@
               <button class="slide-dot" onclick="switchSlide(3, this)" aria-label="Slide 3">3</button>
             </div>
           </div>
-          <img id="presentationSlideImg" src="assets/presentation_slide_1.webp" alt="Arthur Camargo - Apresentação de Ciência e Sabedoria Somática" onerror="this.src='assets/presentation_slide_1.jpg'">
+          <img id="presentationSlideImg" src="assets/presentation_slide_1.webp" alt="Arthur Camargo - Apresentação de Ciência e Sabedoria Somática" width="950" height="534" loading="lazy" onerror="this.src='assets/presentation_slide_1.jpg'">
         </div>
       </div>
     </div>
@@ -558,7 +566,7 @@
             </p>
           </div>
           <div class="b2b-visual-col">
-            <img src="assets/post_nr1.webp" alt="NR-1 Riscos Psicossociais e Burnout Corporativo" class="b2b-post-img" onerror="this.src='assets/post_nr1.jpg'">
+            <img src="assets/post_nr1.webp" alt="NR-1 Riscos Psicossociais e Burnout Corporativo" class="b2b-post-img" width="900" height="523" loading="lazy" onerror="this.src='assets/post_nr1.jpg'">
           </div>
         </div>
       </div>
@@ -635,7 +643,7 @@
               </div>
             </div>
             <div class="folder-image-frame">
-              <img id="schoolFlyerImg" src="assets/flayer_escolas_frente.webp" alt="Folder Informativo - Palestras Voluntárias para Escolas com Arthur Camargo" onerror="this.src='assets/flayer_escolas_frente.jpg'">
+              <img id="schoolFlyerImg" src="assets/flayer_escolas_frente.webp" alt="Folder Informativo - Palestras Voluntárias para Escolas com Arthur Camargo" width="1000" height="1791" loading="lazy" onerror="this.src='assets/flayer_escolas_frente.jpg'">
             </div>
           </div>
         </div>
@@ -673,7 +681,7 @@
           <div class="linkedin-badge-box" style="display: block; min-height: auto; text-align: left; padding: 1.8rem; background: rgba(15, 51, 54, 0.6); border: 1px solid var(--glass-dark-border);">
             <div class="hero-social-connect" style="margin-top: 0; padding: 0; background: transparent; border: none; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; gap: 1.5rem;">
               <div class="qrcode-box" style="align-self: center;">
-                <img src="assets/qrcode_arthur.webp" alt="QR Code Linktree Arthur Camargo" onerror="this.src='assets/qrcode_arthur.jpg'">
+                <img src="assets/qrcode_arthur.webp" alt="QR Code Linktree Arthur Camargo" width="120" height="120" loading="lazy" onerror="this.src='assets/qrcode_arthur.jpg'">
               </div>
               <div class="social-connect-info">
                 <span class="connect-tag"><i class="ph-bold ph-share-network"></i> Redes Sociais & QR Code</span>
@@ -698,7 +706,7 @@
           <div class="linkedin-embed-box">
             <div class="embed-top-bar">
               <div class="embed-author">
-                <img src="assets/logo_emblem.webp" alt="Arthur Camargo - Terapeuta Integrativo e Estrategista Somático" onerror="this.src='assets/logo_emblem.jpg'">
+                <img src="assets/logo_emblem.webp" alt="Arthur Camargo - Terapeuta Integrativo e Estrategista Somático" width="326" height="326" loading="lazy" onerror="this.src='assets/logo_emblem.jpg'">
                 <div>
                   <h5>Arthur Camargo</h5>
                   <span>Terapeuta Integrativo (CRTH-BR 17948) & Estrategista Somático • Conectado via LinkedIn Live</span>
@@ -737,7 +745,7 @@
         <article class="insight-card">
           <div class="insight-img-wrapper">
             <span class="insight-badge">Saúde Corporativa · Dados 2026</span>
-            <img src="assets/post_burnout.webp" alt="O Custo de R$ 10 Bilhões do Burnout no Brasil" onerror="this.src='assets/post_burnout.jpg'">
+            <img src="assets/post_burnout.webp" alt="O Custo de R$ 10 Bilhões do Burnout no Brasil" width="900" height="520" loading="lazy" onerror="this.src='assets/post_burnout.jpg'">
           </div>
           <div class="insight-body">
             <div class="insight-meta">
@@ -758,7 +766,7 @@
         <article class="insight-card">
           <div class="insight-img-wrapper">
             <span class="insight-badge">Liderança & Capital Subjetivo</span>
-            <img src="assets/post_peso.webp" alt="O Peso Silencioso do Sucesso e a Performance" onerror="this.src='assets/post_peso.jpg'">
+            <img src="assets/post_peso.webp" alt="O Peso Silencioso do Sucesso e a Performance" width="900" height="520" loading="lazy" onerror="this.src='assets/post_peso.jpg'">
           </div>
           <div class="insight-body">
             <div class="insight-meta">
@@ -779,7 +787,7 @@
         <article class="insight-card">
           <div class="insight-img-wrapper">
             <span class="insight-badge">Guia Prático · Regulação</span>
-            <img src="assets/post_alivio.webp" alt="Protocolo Tático para Prevenção do Burnout" onerror="this.src='assets/post_alivio.jpg'">
+            <img src="assets/post_alivio.webp" alt="Protocolo Tático para Prevenção do Burnout" width="900" height="520" loading="lazy" onerror="this.src='assets/post_alivio.jpg'">
           </div>
           <div class="insight-body">
             <div class="insight-meta">
@@ -800,7 +808,7 @@
         <article class="insight-card">
           <div class="insight-img-wrapper">
             <span class="insight-badge">Sabedoria & Ciência</span>
-            <img src="assets/post_mtc.webp" alt="Medicina Tradicional Chinesa e Psicanálise" onerror="this.src='assets/post_mtc.jpg'">
+            <img src="assets/post_mtc.webp" alt="Medicina Tradicional Chinesa e Psicanálise" width="900" height="520" loading="lazy" onerror="this.src='assets/post_mtc.jpg'">
           </div>
           <div class="insight-body">
             <div class="insight-meta">
@@ -821,7 +829,7 @@
         <article class="insight-card">
           <div class="insight-img-wrapper">
             <span class="insight-badge">Práticas Corporais · Evidências</span>
-            <img src="assets/post_auriculo.webp" alt="Auriculoterapia Neurofisiológica e Modulação do Estresse" onerror="this.src='assets/post_auriculo.jpg'">
+            <img src="assets/post_auriculo.webp" alt="Auriculoterapia Neurofisiológica e Modulação do Estresse" width="900" height="520" loading="lazy" onerror="this.src='assets/post_auriculo.jpg'">
           </div>
           <div class="insight-body">
             <div class="insight-meta">
@@ -842,7 +850,7 @@
         <article class="insight-card">
           <div class="insight-img-wrapper">
             <span class="insight-badge">Legislação & Gestão Corporativa</span>
-            <img src="assets/post_nr1.webp" alt="NR-1 e Saúde Mental Corporativa" onerror="this.src='assets/post_nr1.jpg'">
+            <img src="assets/post_nr1.webp" alt="NR-1 e Saúde Mental Corporativa" width="900" height="523" loading="lazy" onerror="this.src='assets/post_nr1.jpg'">
           </div>
           <div class="insight-body">
             <div class="insight-meta">
@@ -903,7 +911,7 @@
         </div>
         
         <div class="protocol-showcase-image">
-          <img src="assets/protocolo_90_dias.webp" alt="Fluxograma Metodológico do Protocolo 90 Dias - Arthur Camargo" onerror="this.src='assets/protocolo_90_dias.jpg'">
+          <img src="assets/protocolo_90_dias.webp" alt="Fluxograma Metodológico do Protocolo 90 Dias - Arthur Camargo" width="800" height="1200" loading="lazy" onerror="this.src='assets/protocolo_90_dias.jpg'">
         </div>
       </div>
     </div>
@@ -917,7 +925,7 @@
       <div class="about-card-profile">
         <div class="profile-avatar">
           <!-- Logo ou Foto do Arthur -->
-          <img src="assets/logo_emblem.webp" alt="Arthur Camargo - Terapeuta Integrativo (CRTH-BR 17948) & Estrategista Somático" onerror="this.src='assets/logo_emblem.jpg'">
+          <img src="assets/logo_emblem.webp" alt="Arthur Camargo - Terapeuta Integrativo (CRTH-BR 17948) & Estrategista Somático" width="326" height="326" loading="lazy" onerror="this.src='assets/logo_emblem.jpg'">
         </div>
         <h3>Arthur Camargo</h3>
         <span class="role">Terapeuta Integrativo (CRTH-BR 17948) & Estrategista Somático</span>
@@ -990,7 +998,7 @@
         <!-- Livro 1 (À VENDA AGORA!) -->
         <div class="book-card available-now">
           <div class="book-cover">
-            <img src="assets/capa_livro_nao_venda.webp" alt="Capa do Livro: Não Venda Sua Vida Tão Barato - Arthur Camargo" onerror="this.src='assets/capa_livro_nao_venda.jpg'">
+            <img src="assets/capa_livro_nao_venda.webp" alt="Capa do Livro: Não Venda Sua Vida Tão Barato - Arthur Camargo" width="500" height="750" loading="lazy" onerror="this.src='assets/capa_livro_nao_venda.jpg'">
           </div>
           <div class="book-details">
             <div class="book-status-row">
