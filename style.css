@@ -568,6 +568,14 @@ h1, h2, h3, h4, .serif-font {
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--text-light);
+  transition: var(--transition-smooth);
+  cursor: default;
+}
+
+.trust-chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold-bright);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
 }
 
 .hero-actions {
