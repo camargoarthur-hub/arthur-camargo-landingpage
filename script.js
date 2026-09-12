@@ -196,3 +196,28 @@ function switchSchoolFlyer(side, btn) {
   document.querySelectorAll('.folder-btn').forEach(b => b.classList.remove('active'));
   if (btn) btn.classList.add('active');
 }
+
+/* =========================================
+   CONTROLE DE ÁUDIO DO VÍDEO DESTACADO (FLYER.MP4)
+   ========================================= */
+const flyerVideo = document.getElementById('flyerVideo');
+const toggleFlyerAudioBtn = document.getElementById('toggleFlyerAudio');
+const flyerAudioIcon = document.getElementById('flyerAudioIcon');
+const flyerAudioText = document.getElementById('flyerAudioText');
+
+if (flyerVideo && toggleFlyerAudioBtn) {
+  toggleFlyerAudioBtn.addEventListener('click', () => {
+    if (flyerVideo.muted) {
+      flyerVideo.muted = false;
+      flyerAudioIcon.className = 'ph-bold ph-speaker-high';
+      flyerAudioText.textContent = 'Som Ativado';
+      toggleFlyerAudioBtn.setAttribute('aria-label', 'Desativar áudio do vídeo');
+    } else {
+      flyerVideo.muted = true;
+      flyerAudioIcon.className = 'ph-bold ph-speaker-slash';
+      flyerAudioText.textContent = 'Som Desativado';
+      toggleFlyerAudioBtn.setAttribute('aria-label', 'Ativar áudio do vídeo');
+    }
+  });
+}
+

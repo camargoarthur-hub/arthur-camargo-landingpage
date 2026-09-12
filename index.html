@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap">
   </noscript>
 
-  <!-- Preload da Imagem LCP Principal -->
-  <link rel="preload" href="assets/flyer_complete.webp" as="image" type="image/webp" fetchpriority="high">
+  <!-- Preload do Vídeo LCP Principal -->
+  <link rel="preload" href="assets/Flyer.mp4" as="video" type="video/mp4" fetchpriority="high">
 
   <!-- Preload das Fontes de Ícones Utilizadas (Phosphor Bold & Fill) -->
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/Phosphor-Bold.woff2" as="font" type="font/woff2" crossorigin>
@@ -188,7 +188,16 @@
        ========================================= -->
   <section class="top-flyer-bar" id="flyer-destaque">
     <div class="container top-flyer-container">
-      <img src="assets/flyer_complete.webp" alt="Arthur Camargo — Manifesto e Abordagem Integrativa" class="top-flyer-img" width="980" height="551" fetchpriority="high" loading="eager" onerror="this.src='assets/flyer_complete.jpg'">
+      <div class="top-flyer-video-wrapper">
+        <video id="flyerVideo" class="top-flyer-video" autoplay loop muted playsinline poster="assets/flyer_complete.webp">
+          <source src="assets/Flyer.mp4" type="video/mp4">
+          Seu navegador não suporta a reprodução de vídeo.
+        </video>
+        <button id="toggleFlyerAudio" class="flyer-audio-btn" aria-label="Ativar áudio do vídeo" title="Ativar/Desativar Som">
+          <i class="ph-bold ph-speaker-slash" id="flyerAudioIcon"></i>
+          <span id="flyerAudioText">Som Desativado</span>
+        </button>
+      </div>
     </div>
   </section>
 
