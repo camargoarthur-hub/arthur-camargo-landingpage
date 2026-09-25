@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
   
   <style>
@@ -267,15 +268,15 @@
   </header>
 
   <main class="iching-page-container">
-    <div class="iching-hero-box">
+    <div class="iching-hero-box animate__animated animate__fadeInDown">
       <h1>Consulta Online ao Oráculo I Ching</h1>
       <p>Conecte-se com a sabedoria milenar do Livro das Mutações. Concentre-se em sua questão ou dilema atual e clique nas moedas sagradas para receber orientação oracular e análise de saúde somática.</p>
       
       <div class="coin-raffle-area">
-        <div class="coin-box" id="coinButton" onclick="sortearHexagrama()">
+        <div class="coin-box animate__animated animate__pulse animate__infinite animate__slower" id="coinButton" onclick="sortearHexagrama()">
           <img src="../assets/logo_3d.png" alt="Símbolo Taoísta 3D" class="coin-icon" id="coinIcon">
         </div>
-        <button class="btn-sortear" onclick="sortearHexagrama()">
+        <button class="btn-sortear animate__animated animate__fadeInUp" onclick="sortearHexagrama()">
           <i class="ph-bold ph-sparkle"></i> Sortear Hexagrama
         </button>
       </div>
@@ -370,7 +371,7 @@
 
         document.getElementById('hexAlertaSomatico').innerText = currentHexagrama.alertaSomatico;
 
-        resultCard.classList.add('active');
+        resultCard.classList.add('active', 'animate__animated', 'animate__fadeInUp');
         resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 1200);
     }
