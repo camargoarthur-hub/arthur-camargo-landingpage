@@ -284,54 +284,48 @@
       </div>
     </div>
 
-    <!-- Card de Resultado -->
+    <!-- Card de Resultado Completo -->
     <div class="result-card" id="resultCard">
       <span class="hex-number-badge" id="hexBadge">Hexagrama #--</span>
       <h2 class="hex-title" id="hexTitle">--</h2>
       <div class="hex-trigrams" id="hexTrigrams">--</div>
 
       <div class="sintese-box">
-        <strong>Síntese da Leitura:</strong>
-        <p id="hexSintese" style="margin-top: 6px; margin-bottom: 0;">--</p>
+        <strong><i class="ph-bold ph-sparkle text-gold"></i> Síntese da Leitura:</strong>
+        <p id="hexSintese" style="margin-top: 6px; margin-bottom: 0; font-size: 1.08rem;">--</p>
       </div>
 
-      <!-- Caixa de Liberação de Lead -->
-      <div class="lead-lock-box" id="leadLockBox">
-        <h3><i class="ph-bold ph-lock-key text-gold"></i> Desbloquear Interpretação Tática & Alerta Somático</h3>
-        <p>Informe seu nome e WhatsApp para visualizar a análise completa do Hexagrama e o conselho de saúde nervosa de Arthur Camargo.</p>
+      <div style="background: #f1f5f9; border-left: 4px solid #0f3336; padding: 22px; border-radius: 10px; margin-bottom: 25px;">
+        <h4 style="font-family: 'Cinzel', serif; color: #0f3336; margin-top: 0; margin-bottom: 8px; font-size: 1.15rem;"><i class="ph-bold ph-compass"></i> A Imagem da Natureza</h4>
+        <p id="hexImagem" style="color: #334155; margin-bottom: 18px; font-style: italic; font-size: 1.05rem; line-height: 1.7;">--</p>
         
-        <form id="leadForm" onsubmit="desbloquearAnalise(event)" class="lead-form-grid">
-          <input type="text" id="leadNome" class="lead-input" placeholder="Seu Nome Completo" required>
-          <input type="tel" id="leadWhats" class="lead-input" placeholder="Seu WhatsApp (com DDD)" required>
-          <button type="submit" class="btn-unlock">Ver Interpretação Completa <i class="ph-bold ph-arrow-right"></i></button>
-        </form>
+        <h4 style="font-family: 'Cinzel', serif; color: #0f3336; margin-top: 0; margin-bottom: 8px; font-size: 1.15rem;"><i class="ph-bold ph-scales"></i> O Julgamento do Sábio</h4>
+        <p id="hexJulgamento" style="color: #334155; margin-bottom: 0; font-size: 1.05rem; line-height: 1.7;">--</p>
       </div>
 
-      <!-- Conteúdo Completo Desbloqueado -->
-      <div class="unlocked-content" id="unlockedContent">
-        <div style="background: #f1f5f9; border-left: 4px solid #0f3336; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-          <h4 style="font-family: 'Cinzel', serif; color: #0f3336; margin-top: 0; margin-bottom: 8px;"><i class="ph-bold ph-compass"></i> A Imagem do Sábio</h4>
-          <p id="hexImagem" style="color: #334155; margin-bottom: 15px; font-style: italic;">--</p>
-          
-          <h4 style="font-family: 'Cinzel', serif; color: #0f3336; margin-top: 0; margin-bottom: 8px;"><i class="ph-bold ph-scales"></i> O Julgamento</h4>
-          <p id="hexJulgamento" style="color: #334155; margin-bottom: 0;">--</p>
-        </div>
+      <h3 style="font-family: 'Cinzel', serif; color: #0f2729; margin-top: 30px; margin-bottom: 18px; font-size: 1.5rem;"><i class="ph-bold ph-book-open"></i> Interpretação Filosófica</h3>
+      <div id="hexAnaliseCompleta" style="line-height: 1.85; color: #334155; font-size: 1.08rem;">--</div>
 
-        <h3 style="font-family: 'Cinzel', serif; color: #0f2729; margin-top: 25px;"><i class="ph-bold ph-book-open"></i> Interpretação Filosófica & Acolhimento</h3>
-        <div id="hexAnaliseCompleta" style="line-height: 1.85; color: #334155; font-size: 1.05rem;">--</div>
+      <div class="somatizacao-alert" style="margin-top: 30px; margin-bottom: 35px;">
+        <strong style="color: #0f2729; font-size: 1.1rem;"><i class="ph-bold ph-activity"></i> Alerta de Saúde Somática & Sistema Nervoso:</strong>
+        <p id="hexAlertaSomatico" style="margin-top: 8px; margin-bottom: 0; font-style: normal; line-height: 1.7;">--</p>
+      </div>
 
-        <div class="somatizacao-alert">
-          <strong style="color: #0f2729;"><i class="ph-bold ph-activity"></i> Alerta de Saúde Somática & Sistema Nervoso:</strong>
-          <p id="hexAlertaSomatico" style="margin-top: 8px; margin-bottom: 0;">--</p>
-        </div>
-
-        <div class="cta-consult-box">
-          <h4 style="font-family: 'Cinzel', serif; margin-bottom: 10px; color: #d4af37;">Deseja Alinhar este Momento com Sessões Clínicas?</h4>
-          <p style="margin-bottom: 0; color: #e2e8f0;">O Protocolo de 90 Dias de Arthur Camargo ajuda a reverter o estresse, a ansiedade e a sobrecarga decisória.</p>
-          <a href="https://wa.me/5521983860526?text=Ol%C3%A1%2C%20fiz%20a%20consulta%20do%20I%20Ching%20no%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer">
-            <i class="ph-bold ph-whatsapp-logo"></i> Falar com Arthur Camargo no WhatsApp
-          </a>
-        </div>
+      <!-- Seção Opção de Contato e Dúvidas -->
+      <div style="background: linear-gradient(135deg, #0f3336 0%, #1a4d52 100%); color: #fff; padding: 35px 25px; border-radius: 16px; text-align: center; border: 1px solid rgba(212, 175, 55, 0.4); margin-top: 35px;">
+        <h3 style="font-family: 'Cinzel', serif; color: #d4af37; margin-top: 0; margin-bottom: 12px; font-size: 1.5rem;"><i class="ph-bold ph-chat-circle-dots"></i> Ficou com Alguma Dúvida ou Deseja Conversar?</h3>
+        <p style="font-size: 1.02rem; color: #e2e8f0; max-width: 650px; margin: 0 auto 25px; line-height: 1.7;">
+          Se você está atravessando um momento de agonia, ansiedade ou deseja compartilhar sua história para entender como aplicar esta sabedoria em sua vida, envie seu nome e WhatsApp abaixo. Arthur Camargo entrará em contato com carinho e sigilo.
+        </p>
+        
+        <form id="duvidasForm" onsubmit="enviarDuvidaWhatsApp(event)" class="lead-form-grid" style="max-width: 580px; margin: 0 auto;">
+          <input type="text" id="duvidaNome" class="lead-input" placeholder="Seu Nome Completo" required>
+          <input type="tel" id="duvidaWhats" class="lead-input" placeholder="Seu WhatsApp (com DDD)" required>
+          <textarea id="duvidaMensagem" class="lead-input" style="grid-column: 1 / -1; min-height: 90px; resize: vertical;" placeholder="Conte resumidamente sua dúvida ou agonia atual (opcional)"></textarea>
+          <button type="submit" class="btn-unlock" style="grid-column: 1 / -1; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+            <i class="ph-bold ph-whatsapp-logo" style="font-size: 1.3rem;"></i> Enviar para Arthur Camargo no WhatsApp
+          </button>
+        </form>
       </div>
     </div>
   </main>
@@ -350,8 +344,6 @@
     function sortearHexagrama() {
       const coinBox = document.getElementById('coinButton');
       const resultCard = document.getElementById('resultCard');
-      const leadLockBox = document.getElementById('leadLockBox');
-      const unlockedContent = document.getElementById('unlockedContent');
 
       coinBox.classList.add('flipping');
       resultCard.classList.remove('active');
@@ -363,47 +355,45 @@
         const hexNum = Math.floor(Math.random() * 64) + 1;
         currentHexagrama = HEXAGRAMAS[hexNum] || HEXAGRAMAS[1];
 
-        // Preenche campos iniciais
+        // Preenche todos os campos imediatamente (sem travas)
         document.getElementById('hexBadge').innerText = `Hexagrama #${currentHexagrama.numero}`;
         document.getElementById('hexTitle').innerText = currentHexagrama.nome;
         document.getElementById('hexTrigrams').innerText = currentHexagrama.trigramas;
         document.getElementById('hexSintese').innerText = currentHexagrama.sintese;
 
-        // Reseta estado de trava
-        leadLockBox.style.display = 'block';
-        unlockedContent.classList.remove('active');
+        document.getElementById('hexImagem').innerText = currentHexagrama.imagem;
+        document.getElementById('hexJulgamento').innerText = currentHexagrama.julgamento;
+
+        // Formatação dos parágrafos longos
+        const analiseFormatada = currentHexagrama.analiseCompleta
+          .split('\n\n')
+          .map(p => `<p style="margin-bottom: 18px; text-align: justify;">${p.trim()}</p>`)
+          .join('');
+        document.getElementById('hexAnaliseCompleta').innerHTML = analiseFormatada;
+
+        document.getElementById('hexAlertaSomatico').innerText = currentHexagrama.alertaSomatico;
 
         resultCard.classList.add('active');
         resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 1200);
     }
 
-    function desbloquearAnalise(event) {
+    function enviarDuvidaWhatsApp(event) {
       event.preventDefault();
 
-      const nome = document.getElementById('leadNome').value;
-      const whats = document.getElementById('leadWhats').value;
+      const nome = document.getElementById('duvidaNome').value;
+      const whats = document.getElementById('duvidaWhats').value;
+      const mensagem = document.getElementById('duvidaMensagem').value;
 
-      if (!nome || !whats) return;
+      const hexNome = currentHexagrama ? currentHexagrama.nome : 'I Ching';
 
-      // Preenche imagem e julgamento
-      document.getElementById('hexImagem').innerText = currentHexagrama.imagem;
-      document.getElementById('hexJulgamento').innerText = currentHexagrama.julgamento;
+      let textoWhatsApp = `Ol%C3%A1%2C%20Arthur!%20Meu%20nome%20%C3%A9%20${encodeURIComponent(nome)}%20(${encodeURIComponent(whats)}).%0A%0AFiz%20a%20consulta%20do%20I%20Ching%20no%20site%20e%20tirei%20o%20*${encodeURIComponent(hexNome)}*.`;
 
-      // Preenche conteúdo desbloqueado formatado em parágrafos
-      const analiseFormatada = currentHexagrama.analiseCompleta
-        .split('\n\n')
-        .map(p => `<p style="margin-bottom: 16px;">${p.trim()}</p>`)
-        .join('');
-      document.getElementById('hexAnaliseCompleta').innerHTML = analiseFormatada;
+      if (mensagem.trim()) {
+        textoWhatsApp += `%0A%0A*Minha%20d%C3%BAvida%2Fagoni%20atual%3A*%0A${encodeURIComponent(mensagem)}`;
+      }
 
-      document.getElementById('hexAlertaSomatico').innerText = currentHexagrama.alertaSomatico;
-
-      // Oculta trava e mostra conteúdo
-      document.getElementById('leadLockBox').style.display = 'none';
-      document.getElementById('unlockedContent').classList.add('active');
-
-      console.log('Lead Capturado:', { nome, whats, hexagrama: currentHexagrama.nome });
+      window.open(`https://wa.me/5521983860526?text=${textoWhatsApp}`, '_blank');
     }
   </script>
 </body>
