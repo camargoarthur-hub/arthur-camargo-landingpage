@@ -309,8 +309,16 @@
 
       <!-- Conteúdo Completo Desbloqueado -->
       <div class="unlocked-content" id="unlockedContent">
-        <h3 style="font-family: 'Cinzel', serif; color: #0f2729;"><i class="ph-bold ph-book-open"></i> Análise Analítica Completa</h3>
-        <p id="hexAnaliseCompleta" style="line-height: 1.8; color: #334155;">--</p>
+        <div style="background: #f1f5f9; border-left: 4px solid #0f3336; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+          <h4 style="font-family: 'Cinzel', serif; color: #0f3336; margin-top: 0; margin-bottom: 8px;"><i class="ph-bold ph-compass"></i> A Imagem do Sábio</h4>
+          <p id="hexImagem" style="color: #334155; margin-bottom: 15px; font-style: italic;">--</p>
+          
+          <h4 style="font-family: 'Cinzel', serif; color: #0f3336; margin-top: 0; margin-bottom: 8px;"><i class="ph-bold ph-scales"></i> O Julgamento</h4>
+          <p id="hexJulgamento" style="color: #334155; margin-bottom: 0;">--</p>
+        </div>
+
+        <h3 style="font-family: 'Cinzel', serif; color: #0f2729; margin-top: 25px;"><i class="ph-bold ph-book-open"></i> Interpretação Filosófica & Acolhimento</h3>
+        <div id="hexAnaliseCompleta" style="line-height: 1.85; color: #334155; font-size: 1.05rem;">--</div>
 
         <div class="somatizacao-alert">
           <strong style="color: #0f2729;"><i class="ph-bold ph-activity"></i> Alerta de Saúde Somática & Sistema Nervoso:</strong>
@@ -378,15 +386,23 @@
 
       if (!nome || !whats) return;
 
-      // Preenche conteúdo desbloqueado
-      document.getElementById('hexAnaliseCompleta').innerText = currentHexagrama.analiseCompleta;
+      // Preenche imagem e julgamento
+      document.getElementById('hexImagem').innerText = currentHexagrama.imagem;
+      document.getElementById('hexJulgamento').innerText = currentHexagrama.julgamento;
+
+      // Preenche conteúdo desbloqueado formatado em parágrafos
+      const analiseFormatada = currentHexagrama.analiseCompleta
+        .split('\n\n')
+        .map(p => `<p style="margin-bottom: 16px;">${p.trim()}</p>`)
+        .join('');
+      document.getElementById('hexAnaliseCompleta').innerHTML = analiseFormatada;
+
       document.getElementById('hexAlertaSomatico').innerText = currentHexagrama.alertaSomatico;
 
       // Oculta trava e mostra conteúdo
       document.getElementById('leadLockBox').style.display = 'none';
       document.getElementById('unlockedContent').classList.add('active');
 
-      // Notifica via WhatsApp ou Webhook (Simulado via direcionamento pronto)
       console.log('Lead Capturado:', { nome, whats, hexagrama: currentHexagrama.nome });
     }
   </script>
