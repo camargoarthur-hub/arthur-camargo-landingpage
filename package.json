@@ -1,0 +1,23 @@
+{
+  "name": "arthur_camargo_landingpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camargoarthur-hub/arthur-camargo-landingpage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/camargoarthur-hub/arthur-camargo-landingpage/issues"
+  },
+  "homepage": "https://github.com/camargoarthur-hub/arthur-camargo-landingpage#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
