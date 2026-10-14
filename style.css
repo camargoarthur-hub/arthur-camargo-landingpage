@@ -3376,3 +3376,161 @@ body.js-active .reveal-on-scroll.revealed {
     grid-template-columns: 1fr;
   }
 }
+
+/* Depoimentos públicos do livro */
+.reader-reviews {
+  max-width: 900px;
+  margin: 3.5rem auto 0;
+}
+
+.reader-reviews-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--glass-dark-border);
+}
+
+.reader-reviews-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  color: var(--text-light);
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+}
+
+.reader-reviews-score {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.8rem;
+  color: var(--gold-bright);
+  background: rgba(229, 198, 135, 0.12);
+  border: 1px solid var(--gold-glow);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.reader-reviews-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 1.5rem;
+}
+
+.reader-review-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.8rem;
+  overflow: hidden;
+  color: var(--text-light);
+  background: rgba(15, 51, 54, 0.7);
+  border: 1px solid var(--glass-dark-border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+}
+
+.reader-review-card::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  content: '';
+  background: linear-gradient(90deg, var(--gold-bright), var(--gold-accent), var(--bright-teal));
+}
+
+.reader-review-author {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.reader-review-avatar {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  flex: 0 0 auto;
+  color: var(--gold-bright);
+  background: rgba(9, 32, 34, 0.9);
+  border: 1px solid var(--gold-accent);
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.reader-review-meta h4 {
+  margin: 0;
+  color: var(--text-light);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+}
+
+.reader-review-meta span,
+.reader-review-footer {
+  color: var(--text-muted);
+  font-size: 0.76rem;
+}
+
+.reader-review-meta span {
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.reader-review-rating {
+  margin: 1rem 0 0.6rem;
+  color: #f59e0b;
+  letter-spacing: 0.08em;
+}
+
+.reader-review-headline {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.reader-review-headline:hover,
+.reader-reviews-score:hover,
+.reader-review-footer a:hover {
+  color: var(--gold-bright);
+}
+
+.reader-review-body {
+  margin: 1rem 0 1.3rem;
+  padding-left: 0.9rem;
+  color: var(--text-light);
+  border-left: 2px solid var(--gold-accent);
+  font-size: 0.94rem;
+  font-style: italic;
+  line-height: 1.65;
+}
+
+.reader-review-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.reader-review-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--gold-bright);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .reader-review-card { padding: 1.35rem; }
+  .reader-review-footer { align-items: flex-start; flex-direction: column; }
+}
