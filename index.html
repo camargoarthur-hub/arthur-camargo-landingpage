@@ -191,7 +191,20 @@
   <!-- =========================================
        DESTAQUE SOZINHO (BANNER OFICIAL GIGANTE E LEGÍVEL)
        ========================================= -->
-
+  <section class="top-flyer-bar" id="flyer-destaque" aria-label="Apresentação de Arthur Camargo">
+    <div class="container top-flyer-container">
+      <div class="top-flyer-video-wrapper">
+        <video id="flyerVideo" class="top-flyer-video" autoplay loop muted playsinline preload="metadata" poster="assets/flyer_complete.webp" aria-label="Banner animado com a apresentação profissional e a foto de Arthur Camargo">
+          <source src="assets/Flyer.mp4" type="video/mp4">
+          Seu navegador não suporta a reprodução do vídeo. Conheça Arthur Camargo, psicanalista e terapeuta integrativo.
+        </video>
+        <button id="toggleFlyerAudio" class="flyer-audio-btn" type="button" aria-label="Ativar áudio do vídeo" title="Ativar ou desativar o som do vídeo">
+          <i class="ph-bold ph-speaker-slash" id="flyerAudioIcon" aria-hidden="true"></i>
+          <span id="flyerAudioText">Som desativado</span>
+        </button>
+      </div>
+    </div>
+  </section>
 
   <!-- =========================================
        HERO SECTION
